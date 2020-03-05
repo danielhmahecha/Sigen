@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <style>
+.btn-group button {
+  background-color: #212f3d ; /* Green background */
+  border: 0px  solid #17202a  ; /* Green border */
+  color: white; /* White text */
+  font-size: 100%;
+  padding: 10px 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:right; /* Float the buttons side by side */
+}
+.btn-group button:hover {
+  background-color: #34495e   ;
+}
+
+</style>
+    
+    <head>
+        <title>Variant Search</title>
+        <meta charset = "UTF-8-SIG"/>
+    </head>
+    <body  style="background-color: #eaeded ; font-family:sans-serif" >
+        <h2>Variant Search</h2>
+        <br>
+
+        <br>
+        <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search Variant(s)</legend>
+                <label>rs ID: </label>
+                <input type="text" id="rsID" /> 
+                <button>Search</button>
+                <br>
+                <label>Clinvar ID: </label>
+                <input type="text" id="clinvar" /> 
+                <button>Search</button>
+                <br>
+                <p>Genomic Position: </p>
+                <label>Chromosome: </label>
+                <input type="text" id="chromosome" /> 
+                <label>Initial Position: </label>
+                <input type="text" id="initPos" /> 
+                <label>Final Position: </label>
+                <input type="text" id="finalPos" /> 
+                <button>Search</button>
+
+            </fieldset>
+        </form>
+        <br>
+         <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search variants for a specific Patient</legend>
+                <label>Patient SIGEN ID: </label>
+                <input type="text" id="sigenID" /> 
+                <button>Search</button>
+                
+            </fieldset>
+         </form>
+                <br>
+         <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search variants on a specific Gene</legend>
+                <label>Gene Symbol: </label>
+                <input type="text" id="geneSymbol" /> 
+                <button>Search</button>    
+            
+            </fieldset>
+         </form>
+        
+        <div class="btn-group" style="width:100%">
+        <button style="width: 10%">Home</button>   
+        </div>
+    
+        <table>
+            <tr>
+                <th></th>
+            </tr>
+        </table>
+       
+  
+    </body>
+
+    
+    
+</html>
