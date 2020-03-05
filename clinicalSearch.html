@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <style>
+.btn-group button {
+  background-color: #212f3d ; /* Green background */
+  border: 1px  solid  #d6dbdf   ; /* Green border */
+  color: white; /* White text */
+  font-size: 100%;
+  padding: 10px 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:right; /* Float the buttons side by side */
+}
+.btn-group button:hover {
+  background-color: #34495e   ;
+}
+
+</style>
+    
+    <head>
+        <title>Clinical Search</title>
+        <meta charset = "UTF-8-SIG"/>
+    </head>
+    <body  style="background-color: #eaeded ; font-family:sans-serif" >
+        <h2>Diseases and Symptoms Search</h2>
+        <br>
+        <br>
+         <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search a Disease </legend>
+                <label>Disease name: </label>
+                <input type="text" id="diseasename" /> 
+                <button>Search</button>
+                <br>
+                <label>Disease DOID: </label>
+                <input type="text" id="doid" /> 
+                <button>Search</button>
+                
+            </fieldset>
+         </form>
+
+        <br>
+             <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search a Symptom</legend>
+                <label>Symptom name: </label>
+                <input type="text" id="diseasename" /> 
+                <button>Search</button>    
+                 <br>
+                <label>Symptom HPO: </label>
+                <input type="text" id="doid" /> 
+                <button>Search</button>
+            
+            </fieldset>
+
+        
+        <div class="btn-group" style="width:100%">
+             <button style="width: 10%">Home</button>  
+        <button style="width:10%">Back</button>
+        
+        </div>
+    
+        <table>
+            <tr>
+                <th></th>
+            </tr>
+        </table>
+       
+  
+    </body>
+
+    
+    
+</html>

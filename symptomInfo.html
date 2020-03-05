@@ -41,44 +41,46 @@ tr:nth-child(odd) {
         <meta charset = "UTF-8-SIG"/>
     </head>
     <body  style="font-family:sans-serif" >
-        <h2>Variant:</h2>
-            <table>
-            <thead>
-            <tr >
-                <th>rsID</th>
-                <th>Clinvar ID</th>
-                <th>Type</th>
-                <th>Ref. Allele</th>
-                <th>Alt. Allele</th>
-                <th>Clinical Significance</th>
-                <th>cDNA Pos.</th>
-                <th>Chr</th>
-                <th>Init. Pos.</th>
-                <th>Fin. Pos.</th>
-                <th>Gene</th>
+        <h2>Symptom:</h2>
+        <table>
+        <thead>
+            <tr>
+            <th>Symptom Name</th>
+            <th>HPO</th>
             </tr>
             </thead>
             <tbody>
-                {% for row in variants %} 
-                    <tr id="r04">
-                       
-                        <td>{{row[1]}}</td>
-                        <td>{{row[2]}}</td>
-                        <td>{{row[3]}}</td>
-                        <td>{{row[4]}}</td>
-                        <td>{{row[5]}}</td>
-                        <td>{{row[6]}}</td>
-                        <td>{{row[7]}}</td>
-                        <td>{{row[8]}}</td>
-                        <td>{{row[9]}}</td>
-                        <td>{{row[10]}}</td>
-                        <td>{{row[11]}}</td>
-                    </tr>
+            {% for row in info %}
+                <tr id ="r01">
+                <td>{{row[1]}}</td>
+                <td>{{row[0]}}</td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
         <br>
-        <h3>Patients with this Variant</h3>
+        <h3>Diseases with this Symptom</h3>
+        <table>
+            <thead>
+            <tr >
+                <th>Disease Name</th>
+                <th>DOID</th>
+                <th style="width: 10%"></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in diseases %} 
+                    <tr id="r02">
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td><button>More info.</button></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <br>
+        <h3>Patients with this Symptom</h3>
         <table>
             <thead>
             <tr >
@@ -89,7 +91,7 @@ tr:nth-child(odd) {
             </thead>
             <tbody>
                 {% for row in patients %} 
-                    <tr id="r02">
+                    <tr id="r04">
                         <td>{{row[1]}}</td>
                         <td>{{row[2]}}</td>
                          <td><button>More info.</button></td>
@@ -97,25 +99,7 @@ tr:nth-child(odd) {
                 {% endfor %}
             </tbody>
         </table>
-        <h3>Diseases associated with this Variant</h3>
-                <table>
-            <thead>
-            <tr >
-                <th>Disease Name</th>
-                <th>DOID</th>
-                <th style="width: 10%"></th>
-            </tr>
-            </thead>
-            <tbody>
-                {% for row in diseases %} 
-                    <tr id="r03">
-                        <td>{{row[0]}}</td>
-                        <td>{{row[1]}}</td>
-                        <td><button>More info.</button></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        
         <br>
         <div class="btn-group" style="width:100%">
         <button style="width: 10%">Home</button> 
