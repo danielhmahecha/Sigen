@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <style>
+.btn-group button {
+  background-color: #212f3d ; /* Green background */
+  border: 0px  solid #17202a  ; /* Green border */
+  color: white; /* White text */
+  font-size: 100%;
+  padding: 10px 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:right; /* Float the buttons side by side */
+}
+.btn-group button:hover {
+  background-color: #34495e   ;
+}
+
+</style>
+    
+    <head>
+        <title>Variant Creation</title>
+        <meta charset = "UTF-8-SIG"/>
+    </head>
+    <body  style="background-color: #eaeded ; font-family:sans-serif" >
+        <h2>Variant Creation</h2>
+        <br>
+
+        <br>
+        <form>
+            <fieldset>
+                <legend style="font-size: 100%">Variant Data</legend>
+                <label>HGVS Label: </label>
+                <input type="text" name="hgvs" /> 
+                <br>
+                <label>rs ID: </label>
+                <input type="text" name="rsID" /> 
+                 <br>
+                <label>Reference Allele (*): </label>
+                <input type="text" name="refAllele" /> 
+                 <br>
+                <label>Alternative Allele (*): </label>
+                <input type="text" name="altAllele" /> 
+                 <br>
+                <label>Clinvar ID: </label>
+                <input type="text" name="clinvar" /> 
+                 <br>
+                <label>Clinical Significance : </label>
+                <input type="text" name="clinsig" />
+                <p>(1=Benign; 2=Likely Benign; 3= Uncertain Significance; 4= Likely Pathogenic; 5= Pathogenic)</p>
+                 <br>
+                <h4>Location (*): </h4>
+                <label>Chromosome </label>
+                <input type="text" name="chr" /> 
+                <label>Initial Position </label>
+                <input type="text" name="initPos" /> 
+                <label>Final Position </label>
+                <input type="text" name="finlPOs" /> 
+                 <br>
+                 <label>Gene Symbol: </label>
+                 <input type="text" name="geneSymbol" /> 
+                 <br>
+                <p>* = Compulsory Fields</p>
+                <button>Create</button>
+            </fieldset>
+        </form>
+                 <form>
+        
+               <div class="btn-group" style="width:100%">
+               <button  type="submit" formaction="{{ url_for('index') }}" style="width:10%">Back</button>
+               </div>
+             </form>
+    </body>
+
+    
+    
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <style>
+.btn-group button {
+  background-color: #212f3d ; /* Green background */
+  border: 1px  solid #d6dbdf   ; /* Green border */
+  color: white; /* White text */
+  font-size: 20px;
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+#b01:hover {
+  background-color: #ba4a00   ;
+}
+#b02:hover {
+  background-color: #b7950b   ;
+}
+#b03:hover {
+  background-color: #922b21   ;
+}
+#b04:hover {
+  background-color: #ba4a00   ;
+}
+#b05:hover {
+  background-color: #b7950b   ;
+        }
+ #b06:hover {
+  background-color: #033a02   ;
+}
+
+}
+</style>
+    
+    <head>
+        <title>SIGEN DataBase</title>
+        <meta charset = "UTF-8"/>
+    </head>
+    <body  style="background-color: #eaeded ; font-family:sans-serif" >
+        <h1>SIGEN DataBase</h1>
+        <h3>Universidad de los Andes - Fundación Santa Fe de Bogotá</h3>
+        <br>
+        <br>
+        <form>
+            <fieldset>
+                <legend style="font-size: 22px">Search</legend>
+               
+                <div class="btn-group" style="width:100%">
+                    <button  type="submit" formaction="{{ url_for('patientSearch') }}" id="b01" style="width: 33.3%">Patients</button>
+                    <button type="submit" formaction="{{ url_for('variantSearch') }}" id="b02" style="width: 33.3%">Variants</button>
+                    <button type="submit" formaction="{{ url_for('clinicalSearch') }}" id="b03" style="width: 33.3%">Diseases/Symptoms</button>
+                
+
+                </div>
+            </fieldset>
+        <br>
+        <br>
+        <br>
+        <br>
+        </form>
+        <form>
+            <fieldset>
+                <legend style="font-size: 22px">Create</legend>
+          
+                <div class="btn-group" style="width:100%">
+                    <button type="submit" formaction="{{ url_for('patientCreation') }}" id="b04" style="width: 33.3%">Patient</button>
+                    <button type="submit" formaction="{{ url_for('variantCreation') }}" id="b05" style="width: 33.3%">Variant</button>
+                    <button type="submit" formaction="{{ url_for('genotypeCreation') }}" id="b06" style="width: 33.3%">Genotype</button>
+
+                </div>
+            </fieldset>
+        </form>
+    
+    </body>
+
+    
+    
+</html>

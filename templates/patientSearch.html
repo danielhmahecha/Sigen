@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <style>
+.btn-group button {
+  background-color: #212f3d ; /* Green background */
+  border: 0px  solid #17202a  ; /* Green border */
+  color: white; /* White text */
+  font-size: 100%;
+  padding: 10px 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:right; /* Float the buttons side by side */
+}
+.btn-group button:hover {
+  background-color: #34495e   ;
+}
+
+</style>
+    
+    <head>
+        <title>Patient Search</title>
+        <meta charset = "UTF-8-SIG"/>
+    </head>
+    <body  style="background-color: #eaeded ; font-family:sans-serif" >
+        <h2>Patient Search</h2>
+        <br>
+
+        <br>
+        <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search by SIGEN ID</legend>
+                <label>SIGEN ID: </label>
+                <input type="text" name="sigenID" /> 
+                <button type="submit" formaction="{{ url_for('patientInfo') }}">Search</button>
+            </fieldset>
+        </form>
+        <br>
+         <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search patients with a specific variant</legend>
+                <label>Variant rsID: </label>
+                <input type="text" name="rsID" /> 
+                <button type="submit">Search</button>
+                <br>
+                <label>Clinvar ID: </label>
+                <input type="text" name="clinvar" /> 
+                <button>Search</button>
+                <br>
+                <label>SIGEN Variant ID: </label><input type="text" name="sigenvar" />
+               
+                <button>Search</button>
+            </fieldset>
+         </form>
+                <br>
+         <form>
+            <fieldset>
+                <legend style="font-size: 100%">Search patients by clinical features</legend>
+                <label>Disease name: </label>
+                <input type="text" id="disname" /> 
+                <button>Search</button>    
+                <br>
+                <label>Disease DOID: </label>
+                <input type="text" id="doid" /> 
+                <button>Search</button> 
+                <br>
+                <label>Symptom name: </label>
+                <input type="text" id="doid" /> 
+                <button>Search</button>
+                <br>
+                <label>Symptom HPO: </label>
+                <input type="text" id="doid" /> 
+                <button>Search</button>
+            </fieldset>
+         </form>
+        
+         <form>
+        
+               <div class="btn-group" style="width:100%">
+               <button  type="submit" formaction="{{ url_for('index') }}" style="width:10%">Back</button>
+               </div>
+             </form>
+    
+        <table>
+            <tr>
+                <th></th>
+            </tr>
+        </table>
+       
+  
+    </body>
+
+    
+    
+</html>

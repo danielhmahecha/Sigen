@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <style>
+.btn-group button {
+  background-color: #212f3d ; /* Green background */
+  border: 1px  solid  #ccd1d1   ; /* Green border */
+  color: white; /* White text */
+  font-size: 100%;
+  padding: 10px 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:right; /* Float the buttons side by side */
+}
+.btn-group button:hover {
+  background-color: #34495e   ;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color:  #abb2b9      ;
+}
+
+        
+        #r01:nth-child(odd){background-color:  #FFFFFF  ;}
+        #r02:nth-child(odd){background-color:  #d1f2eb ;}
+         #r03:nth-child(odd){background-color: #e8daef ;}
+        #r04:nth-child(odd){background-color:  #d4e6f1  ;}
+</style>
+    
+    <head>
+        <title>Disease: {{data['info'][0][0]}}</title>
+        <meta charset = "UTF-8-SIG"/>
+    </head>
+    <body  style="font-family:sans-serif" >
+        <h2>Disease:</h2>
+        <table>
+        <thead>
+            <tr>
+            <th>Disease Name</th>
+            <th>DOID</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in data['info'] %}
+                <tr id ="r01">
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Symptoms of this disease</h3>
+        <table>
+            <thead>
+            <tr >
+                <th>Symptom Name</th>
+                <th>HPO</th>
+                <th style="width: 10%"></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in symptoms %} 
+                    <tr id="r02">
+                        <td>{{row[1]}}</td>
+                        <td>{{row[0]}}</td>
+                        <td><button>More info.</button></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Variants associated with this Disease</h3>
+            <table>
+            <thead>
+            <tr >
+                <th>rsID</th>
+                <th>Clinvar ID</th>
+                <th>Type</th>
+                <th>Ref. Allele</th>
+                <th>Alt. Allele</th>
+                <th>Clinical Significance</th>
+                <th>cDNA Pos.</th>
+                <th>Chr</th>
+                <th>Init. Pos.</th>
+                <th>Fin. Pos.</th>
+                <th>Gene</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in variants %} 
+                    <tr id="r03">
+                       
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                        <td>{{row[6]}}</td>
+                        <td>{{row[7]}}</td>
+                        <td>{{row[8]}}</td>
+                        <td>{{row[9]}}</td>
+                        <td>{{row[10]}}</td>
+                        <td>{{row[11]}}</td>
+                        <td><button>More info</button></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Patients with this Disease</h3>
+        <table>
+            <thead>
+            <tr >
+                <th>Sigen ID</th>
+                <th>Sex</th>
+                <th style="width: 10%"></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in patients %} 
+                    <tr id="r04">
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                         <td><button>More info.</button></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <br>
+        <div class="btn-group" style="width:100%">
+        <button style="width: 10%">Home</button> 
+         <button style="width: 10%">Back</button>   
+        </div>
+           
+  
+    </body>
+
+    
+    
+</html>

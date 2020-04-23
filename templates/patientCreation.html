@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <style>
+.btn-group button {
+  background-color: #212f3d ; /* Green background */
+  border: 0px  solid #17202a  ; /* Green border */
+  color: white; /* White text */
+  font-size: 100%;
+  padding: 10px 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:right; /* Float the buttons side by side */
+}
+.btn-group button:hover {
+  background-color: #34495e   ;
+}
+
+</style>
+    
+    <head>
+        <title>Patient Creation</title>
+        <meta charset = "UTF-8-SIG"/>
+    </head>
+    <body  style="background-color: #eaeded ; font-family:sans-serif" >
+        <h2>Patient Creation</h2>
+        <br>
+
+        <br>
+        <form>
+            <fieldset>
+                <legend style="font-size: 100%">Patient Data</legend>
+                <label>SIGEN ID: </label>
+                <input type="text" name="sigenID" /> 
+                <label>Sex: </label>
+                <input type="text" name="sex" /> 
+                <button type="submit" formaction="{{ url_for('patientCreation') }}">Create</button>
+            </fieldset>
+            <p>Sex Variable Key: M=Male; F=Female; U=Unspecified</p>
+        </form>
+                 <form>
+        
+               <div class="btn-group" style="width:100%">
+               <button  type="submit" formaction="{{ url_for('index') }}" style="width:10%">Back</button>
+               </div>
+             </form>
+        <p>{{data}}</p>
+    </body>
+
+    
+    
+</html>
